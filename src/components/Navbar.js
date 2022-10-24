@@ -1,7 +1,9 @@
 import React from "react";
 import { Flex, Box, Text } from "@chakra-ui/react";
-import NavTitle from "./NavTitle";
-import { FiActivity } from "react-icons/fi";
+import {Link} from "react-router-dom";
+import { FiActivity } from "react-icons/fi"
+
+
 
 export default function Navbar() {
   return (
@@ -13,14 +15,18 @@ export default function Navbar() {
         paddingY={5}
         justifyContent="space-between"
       >
-        <FiActivity color="white" />
-        <Text>Heart </Text>
+        <Flex >
+        <FiActivity color="white"  />
+        
+          <Text marginLeft='3' color='white'>ATOZ </Text>
+        </Flex>
+        
 
         <Flex alignItems="center" gap={["3", "3", "3", "5", "10"]}>
-          <NavTitle title="Home" />
-          <NavTitle title="About" />
-          <NavTitle title="Sign In" />
-          <NavTitle title="Sign Up" />
+        <Link className='link' to="/"> Home</Link>
+        <Link className='link' to ="/about"> About</Link>
+        <Link className='link' to="/contactus"> Contact Us</Link>
+        <Link className='link' to="/signup"> Sign Up</Link>
         </Flex>
       </Flex>
     </Box>
